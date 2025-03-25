@@ -6,6 +6,7 @@ import { MenuList } from '../components/MenuList.tsx';
 import { Footer } from '../components/Footer.tsx';
 import { useMenuHook } from '../hooks/useMenuHook.tsx';
 import { menuCategory } from '../typescript/types.ts';
+import { Locations } from '../components/Location.tsx';
 
 export const HomePage = () => {
   const [activeCategory, setActiveCategory] = useState<string>('Especiales');
@@ -30,7 +31,8 @@ export const HomePage = () => {
           <MenuList activeMenu={activeMenu} />
         </div>
       </section>
-
+      
+      <Locations />
       <Footer />
     </div>
   );

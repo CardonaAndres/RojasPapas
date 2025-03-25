@@ -7,10 +7,10 @@ type Props = {
 
 export const MenuList = ({ activeMenu }: Props) => {
   return (
-    <div className="grid md:grid-cols-3 gap-6" id='Menu'>
+    <div className="grid md:grid-cols-3 gap-6">
       {activeMenu.items.map((item) => (
         <div key={item.name} className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition">
-          <img src={item.image} alt={item.name} className="w-full h-48 object-cover" />
+          <img src={item.image} alt={item.name} loading='lazy' className="w-full h-48 object-cover" />
           <div className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-2xl font-bold text-red-600">{item.name}</h3>

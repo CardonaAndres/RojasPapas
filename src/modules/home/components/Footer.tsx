@@ -19,12 +19,12 @@ export const Footer = () => {
             <div>
                 <h4 className="text-2xl font-bold mb-4">Síguenos</h4>
                 <div className="flex justify-center space-x-4">
-                <a href="#" className="hover:text-red-200"><Instagram size={30} /></a>
+                <a href="#" aria-label='Instagram Icon' className="hover:text-red-200"><Instagram size={30} /></a>
                 </div>
             </div>
         </div>
         <div className="text-center mt-8 border-t border-white border-opacity-20 pt-4">
-            <p>© 2024 Salchipapas Las Palmas</p>
+            <p>© {new Date().getFullYear()} Salchipapas Las Palmas</p>
         </div>
     </footer>
   )

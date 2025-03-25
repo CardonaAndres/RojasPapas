@@ -17,3 +17,10 @@ export type promoItem = {
     discount: string;
     image: string;
 }
+
+export type Location = {
+    name: string;
+    address: string;
+    hours: string;
+    googleMapsUrl: string;
+};

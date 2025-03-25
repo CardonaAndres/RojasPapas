@@ -27,7 +27,7 @@ Este proyecto ha sido desarrollado con las siguientes tecnologías:
 
 ### 📌 **1. Clonar el repositorio**  
 ```sh
-git clone https://github.com/tu-usuario/RojasPapas.git
+git clone https://github.com/CardonaAndres/RojasPapas.git
 cd RojasPapas
 ```
 
