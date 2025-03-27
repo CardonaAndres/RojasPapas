@@ -23,4 +23,17 @@ export type Location = {
     address: string;
     hours: string;
     googleMapsUrl: string;
+    phone : string;
 };
+
+export type socialLink = {
+    Icon: any
+    href: string;
+    color: string;
+}
+
+export type contactInfoItem = {
+    Icon: any;
+    text: string;
+    href?: string;
+}

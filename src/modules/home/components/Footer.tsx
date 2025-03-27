@@ -1,33 +1,96 @@
-import {Instagram } from 'lucide-react';
+import {  Instagram, MapPin, Phone, Clock } from 'lucide-react';
+import { socialLink, contactInfoItem } from '../typescript/types';
 
 export const Footer = () => {
+  const socialLinks : socialLink[] = [
+    { 
+      Icon: Instagram, 
+      href: "https://instagram.com/salchipapaspalmas",
+      color: "text-white hover:text-pink-800",
+    },
+  ];
+
+  const contactInfo : contactInfoItem[]= [
+    { 
+      Icon: MapPin, 
+      text: "Las Palmas, Antioquia",
+      href: "https://maps.google.com/?q=Las+Palmas,+Antioquia"
+    },
+    { 
+      Icon: Phone, 
+      text: "314 567 8901",
+      href: "tel:+573145678901"
+    },
+    { 
+      Icon: Clock, 
+      text: "Lunes a Domingo, 11:00 AM - 10:00 PM"
+    }
+  ];
+
   return (
-    <footer className="bg-red-600 text-white py-12">
-        <div className="container mx-auto grid md:grid-cols-3 gap-8 text-center">
-            <div>
-                <h4 className="text-2xl font-bold mb-4">Contacto</h4>
-                <div className="space-y-2">
-                <p>📍 Las Palmas, Antioquia</p>
-                <p>📞 314 567 8901</p>
-                </div>
+    <footer className="bg-red-600 text-white py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Contacto */}
+          <div>
+            <h4 className="text-3xl font-black mb-6 uppercase tracking-tight">Contacto</h4>
+            <div className="space-y-4">
+              {contactInfo.map(({ Icon, text, href }, index) => (
+                <a 
+                  key={index} 
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 hover:text-red-100 transition-colors group"
+                >
+                  <Icon 
+                    className="text-white group-hover:scale-110 transition-transform" 
+                    size={24} 
+                  />
+                  <span className="text-lg">{text}</span>
+                </a>
+              ))}
             </div>
-            <div>
-                <h4 className="text-2xl font-bold mb-4">Horarios</h4>
-                <p>Lunes a Domingo</p>
-                <p>11:00 AM - 10:00 PM</p>
+          </div>
+
+          {/* Horarios */}
+          <div>
+            <h4 className="text-3xl font-black mb-6 uppercase tracking-tight">Horarios</h4>
+            <div className="space-y-2 text-lg">
+              <p>Servicio Continuo</p>
+              <p>Lunes a Domingo</p>
+              <p>11:00 AM - 10:00 PM</p>
             </div>
-            <div>
-                <h4 className="text-2xl font-bold mb-4">Síguenos</h4>
-                <div className="flex justify-center space-x-4">
-                <a href="#" aria-label='Instagram Icon' className="hover:text-red-200"><Instagram size={30} /></a>
-                </div>
+          </div>
+
+          {/* Redes Sociales */}
+          <div>
+            <h4 className="text-3xl font-black mb-6 uppercase tracking-tight">Síguenos</h4>
+            <div className="">
+              {socialLinks.map(({ Icon, href, color }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Síguenos en ${Icon.name}`}
+                  className={`${color} hover:scale-125 transition-transform`}
+                >
+                  <Icon size={36} strokeWidth={1.5} />
+                </a>
+              ))}
             </div>
+          </div>
         </div>
-        <div className="text-center mt-8 border-t border-white border-opacity-20 pt-4">
-            <p>© {new Date().getFullYear()} Salchipapas Las Palmas</p>
+
+        {/* Copyright */}
+        <div className="text-center border-t border-white/20 pt-8 mt-8">
+          <p className="text-sm opacity-80">
+            © {new Date().getFullYear()} Salchipapas Las Palmas. 
+            Todos los derechos reservados.
+          </p>
         </div>
+      </div>
     </footer>
-  )
-}
-
-
+  );
+};
