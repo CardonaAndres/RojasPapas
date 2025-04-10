@@ -37,3 +37,9 @@ export type contactInfoItem = {
     text: string;
     href?: string;
 }
+
+export type Feature = {
+    icon : any,
+    title : string,
+    description : string
+}

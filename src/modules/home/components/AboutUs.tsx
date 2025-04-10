@@ -1,8 +1,8 @@
-import React from 'react';
 import { Award, Flame, Users, MapPin } from 'lucide-react';
+import { Feature } from '../typescript/types';
 
 export const AboutUs: React.FC = () => {
-  const features = [
+  const features : Feature[] = [
     {
       icon: <Flame className="w-12 h-12 text-red-600" />,
       title: 'Sabor Auténtico',
